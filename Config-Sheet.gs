@@ -1,6 +1,12 @@
 /**************************************************************************
 *  Realtime Alerting for Google Analytics
+*  Version: 1.0
 **************************************************************************/
+
+/**
+* Global Variables.
+* Availabile to all functions in all .gs script files. 
+*/
 
 CONFIG_LABELS = [
   ["Alert Name"],
@@ -173,4 +179,3 @@ function setCustomFormulaValidation(range, formula) {
   .build();
   range.setDataValidation(rule);
 }
-
