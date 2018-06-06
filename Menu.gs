@@ -1,10 +1,12 @@
 /**************************************************************************
 *  Realtime Alerting for Google Analytics
+*  Version: 1.0
 **************************************************************************/
 
 /**
 * Creates Realtime Alerting Menu when file is opened.
 */
+
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('GA Realtime')
