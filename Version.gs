@@ -20,6 +20,6 @@ function checkScriptVersion(){
   Logger.log(latestVersion);
   
   if(currentVersion != latestVersion) {  
-    MailApp.sendEmail(USER_EMAIL, "GA Real Time Alerting: Script Update", "There's a new version of the Real Time Alerting Script. To get the new version copy the script files from here https://github.com/99-metrics/ga-realtime-alerting");
+    MailApp.sendEmail(USER_EMAIL, "GA Real Time Alerting: Script Update", "<p>There's a new version of the Real Time Alerting Script.</p><p>To get the new version copy the script files from here https://github.com/99-metrics/ga-realtime-alerting</p>");
   };
 }
