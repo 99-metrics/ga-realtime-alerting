@@ -69,5 +69,5 @@ function menuItem7() {
 }
 
 function menuItem8() {
-  addAlert();
+  addAlert(SS.getSheetByName("Alert-Configuration"));
 }
