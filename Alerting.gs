@@ -202,10 +202,6 @@ function isAlertValidNow(checks) {
 /**
 * Sends alert containing HTML table if required and sets Script property with time email was sent
 * @param {Object} alert Object created with params from config sheet and results of API query
-* Result of function is running other functions:
-* convertResultsToHTMLTable if required - not required if alert state is 0 occurences
-* emailAlert  - sends email
-* setScriptProperty - sets script proerty 
 */
 
 function sendAlert(alert) {
@@ -219,9 +215,10 @@ function sendAlert(alert) {
 * @param {string} viewId GA view ID as 8 or 9 character numeric string with ga:
 * @param {string} metrics Single GA realtime metric: https://developers.google.com/analytics/devguides/reporting/realtime/dimsmets/
 * @param {Object} options Object of sort (defaulted to large to small), dimensions and filters
-*  outputs JSON of GA realtime data see here: 
+* @return {Object} JSON formatted results of Realtime query formatted as here:
 *    https://developers.google.com/analytics/devguides/reporting/realtime/v3/reference/data/realtime#resource
 */
+
 function getRealtimeResponse(viewId, metrics, options) {
   return(Analytics.Data.Realtime.get(viewId, metrics, options));
 }
@@ -238,7 +235,12 @@ function emailAlert(name, results, email) {
   MailApp.sendEmail(email.recipients, email.subject, email.body, {"htmlBody" : email.body});
 }
 
-/* Convert Realtime results into HTML table */
+/**
+*Convert Realtime results into HTML table
+* @param {Object} results - Object containing headers, rows and totals for Realtime API query 
+* @return {string} table -  HTML table of headers and rows of RealTime API reults
+*/ 
+
 function convertResultsToHTMLTable(results) {
   var headers = "<tr style=\"text-align:left\"><th>" + results.headers.join("</th><th>") + "</th></tr>";
   var rows = results.rows.map(function (row) {
@@ -246,13 +248,14 @@ function convertResultsToHTMLTable(results) {
   });
   var table = "<table>" + headers + rows.join("") + "</table>";
   return(table);   
+  
 }
 
 /**
 * Return GA realtime API data for an alert 
 * function parses JSON response from getRealtimeResponse function
 * @param {Object} query complete GA query Object requires viewId, metrics and options (filters & dimensions)
-* function outputs Object containing result Headers, rows (metrics split by dimension) and total for all results
+* @return {Object} results - Object containing headers, rows and totals for Realtime API query 
 */
 
 function getAlertResults(query) {
@@ -271,9 +274,7 @@ function getAlertResults(query) {
 * function compares the difference between now & last time the alert was triggered from the ScriptProperty 
 * @param {string} alertName in order capture the last alert time using readScriptProperty
 * @param {integer} emailExpiry number of minutes after previous email that alert becomes active
-* if the alert has never been triggered the funcion will return true
-* if the difference between now and the last alerted time is greater than the emailExpiry in the config
-* the function will return true otherwise false
+* @return {Boolean}
 */
 
 function hasPreviousAlertExpired(alertName, emailExpiry) {
@@ -297,9 +298,7 @@ function hasPreviousAlertExpired(alertName, emailExpiry) {
 *   function compares the current hour of the day with the hours of activity in the user config settings
 * @param {integer} startHour hour when alert should become active - can be empty
 * @param {integer} endHour hour when alert should become inactive - can be empty
-* if input is empty the startHour will be set to 0 and the endHour to 23 and the function will return true
-* if the current hour is gt or equal to the startHour & the endHour is lt or equal to the current hour the function will return true
-* otherwise the function will return false
+* @return {Boolean}
 */
 
 function isAlertWithinHours(startHour, endHour) {
@@ -317,8 +316,7 @@ function isAlertWithinHours(startHour, endHour) {
 * Check whether current time is within alert days 
 *   compares the current day of the week with the day of the week in the user config settings
 * @param {string} alertDays Days when alert should be active "All days" or  "Weekdays"
-*   if the current day is a Sat or a Sun & config is set to Weekdays function will return false
-*   function will return true in all other cases
+* @return {Boolean}
 */
 function isAlertWithinDays(alertDays) {
   var dayNow = new Date().getDay();
@@ -349,7 +347,7 @@ function isAlertWithinDays(alertDays) {
 Check whether current time is within alert hours
 * @param {Object} config alert settings Object that is supplies alert direction and threshold
 * @param {integer} total Total number of occurences of situation monitored 
-* Outputs TRUE if the threshold is breached and FALSE if it is not
+* @return {Boolean}
 */
 function alertThresholdBreached(config, total) {
   switch(config.direction) {

@@ -113,7 +113,8 @@ function addConfigSheet(sheetname) {
   if(CONFIG == null) {
     insertSheet(sheetname);    
   } else {
-    SS.deleteSheet(SS.getSheetByName("Backup-Alert-Configuration"));
+    if(SS.getSheetByName("Backup-Alert-Configuration")!= null){
+      SS.deleteSheet(SS.getSheetByName("Backup-Alert-Configuration"));}
     CONFIG.setName("Backup-" + sheetname);
     insertSheet(sheetname);
   }
