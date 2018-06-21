@@ -1,13 +1,40 @@
 # ga-realtime-alerting
 Google Apps Script to query Google Analytics Realtime API on a scheduled and send custom email alerts when user-defined metric thresholds are reached.
 
-# Script setup guide 
+# Setup guide 
 
-Make a copy of the **script template (or copy scripts from GitHub)** and then go to **Tools > Script editor from the menu**.
+Make a copy of the **script template**
 
+[From this read-only version of the script](https://docs.google.com/spreadsheets/d/1wTwNSAeoSuTU-mVEPqHATPMVWCzvLxs4zsRtn9G1Bz0/edit?usp=sharing)
+
+This will hopefully be up to date with the latest version of the scripts but it's worth checking!
+
+or **copy scripts from GitHub** 
+
+To do this create a brand new Google Sheet and go to **Tools > Script editor from the menu**.
 
 <img src="https://lh5.googleusercontent.com/A3Sh4MxmLcU2kagFK6RniVzahCI15qL8BnT-36c5gCrllAfzQjhvijkVMDkoRWVpOOurvEux_pC7B2Wm9wCVl4Qeb68CLTxbEe4UbMDAnaaofbo8xhEcID3U5yVTVmvSM2vq6hqM">
 
+**Create 6 scripts** 
+
+<img src="https://lh3.googleusercontent.com/xucPGtDJaH4WQMNu8AGSy_GXNL_nE8X274-26QRF-Le5-BFsxCcsGBqMRaZ4Yxpqd3W8sVFg_s8u06xVvhUP_eWfgpttHqt3NExK_xsg0zlqsDEZ-Vzj3nhGsPb334H-h9hnD86z" width="366">
+
+called... (case sensitive)
+
+Alerting,
+Common,
+Config-Sheet,
+Dims-Mets,
+Menu,
+Version,
+
+Copy and paste the scripts from the **raw** GitHub versions (delete the “function myFunction() {}”)
+
+<img src="https://lh4.googleusercontent.com/brzY61rbErhusGUrFAed36ji1HEQFZASF7x1IqDSuBwHLGPVDhsNOW6oDIUUpd74-NfozVPEJEDzXxPVC258J-0x6dDR7Yjm_6EwahfSukXoT-JFhvb058uC0_yoqS2pCpZ0-JWV" width="366">
+
+Save your script (and name it)
+
+# Script setup guide 
 
 Go to **Resources > Advanced Google services.**
 
@@ -25,8 +52,7 @@ The **Developers Console** will open in a new tab.
 
 <img src="https://lh5.googleusercontent.com/2hJXSmbqkv1fxcLyuSDBllXQJhDWd7J2O5wjTD3dR_sgHr2ND0oLa57hqoE2iU8WMlqI0XOv7O-D4e1OZ3WAqvVyq84nOZFuijHYmem7D-bzNiH3Mp9LPygaAy5jT6F1Xybz_L0b" width="602">
 
-
-Search for and select the **Analytics API**
+Search for and select the **Analytics API** NOT **Google Analytics Reporting API**
 
 <img src="https://lh4.googleusercontent.com/VMgtoGNhSifjFpxZHvN8pqyG73mtq-TyO5ZayRCeV1F42_R2_l0cJ682fE3kggWKtRA1oy4nHzXiXblFy15FTR_OWIZvMqC6KDOcq98REkg42zN0L1jvtYbYjSxgt0_4jkmphTcB" width="400">
 
@@ -44,15 +70,15 @@ An **updating settings** message will display at the top of the screen.
 
 The script is now setup and you can close the Script Editor tab.
 
-#Create Alerts
+# Create Alerts
 
 Refresh the browser - This generates the App menus 
 
 Go to **GA Realtime > Create Configuration Sheet** in the menu
 
-The first time you run the script you will be prompted to grant some permissions.
+The first time you run the script you will be prompted to grant some permissions (text depends on what you named your script).
 
-<img src="https://lh6.googleusercontent.com/SnJS_fUHz-uRhcwxhY4PYGPT861dq5nF67YnM0hHW2Laq1hdFMGxekGvXfvbP-wYgwsd7ngQTGR1lfh-ZR9AllzNP7TgsGczahyKSJzAAOOvYA8iJnXviEJ8ShgPMV4VbpQHORHb" width="332">
+<img src="https://lh3.googleusercontent.com/84NuhfAUvBNTUu_BX1bJgo9OsIBHnwhp30wPMxkTNVCkFM6BEu43FGVrE3KexQRPxS90lG3xxvYCEqjm3eELCMBg0XcwZg3J6e8Jz7hvP5bhZiD01AxlC53N_w80EmlorEjokLI3" width="332">
 
 Select **Continue** and **Allow** permissions in the next window.  
 
@@ -61,9 +87,9 @@ This is a standard alert/warning as the app script can access your GA data and t
 
 Click **Advanced**.
 
-<img src="https://lh6.googleusercontent.com/7yvj6PYYY6CejcHJzHrrsKG91ZcWrZMxFVeFoZCS_GLYJlBsVcWeTbdWZISvZ2aEP_kQWbKL0L6qnHoSkEfXF3fL07dFqFxNxy6aXBI5Jba3iV20zIqf_tc2pCamorG3ABubh6_9" width="332">
+<img src="https://lh4.googleusercontent.com/RCgI8kz8qhor8ff0t_IrB-37kERKR_65S7Q2KnE5Sfwz81mKGOJu5tI0uq2k8uCzH1V_9atJ6S1PgE2uwDDOd-MqSVYw88Bk5f4fxWB-nQes6bKyItr3-V3_QLOIa9w7LC9PXkYk" width="332">
 
-Click Go to **GA Realtime Alerting Script v3 Master** (unsafe).
+Click Go to **Untitled project (unsafe)** - (or whatever you called your script).
 
 Add your parameters to the config sheet - To see tips for competing each section hover over row titles
 
