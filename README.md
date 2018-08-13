@@ -1,5 +1,5 @@
 # ga-realtime-alerting
-Google Apps Script to query Google Analytics Realtime API on a scheduled and send custom email alerts when user-defined metric thresholds are reached.
+Uses Google Apps Script to query the Google Analytics Realtime API on a schedule - every 5, 10, 15 or 30 minutes - and sends an email alert when user-defined metric thresholds are reached.
 
 # Setup guide 
 
@@ -9,9 +9,9 @@ Make a copy of the **script template**
 
 This will hopefully be up to date with the latest version of the scripts but it's worth checking!
 
+
 [When you've made your copy you need to set up the script - jump to the script set up guide](#script-setup-guide)
-
-
+=======
 or **copy scripts from GitHub** 
 
 To do this create a brand new Google Sheet and go to **Tools > Script editor from the menu**.
