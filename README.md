@@ -9,9 +9,8 @@ Make a copy of the **script template**
 
 This will hopefully be up to date with the latest version of the scripts but it's worth checking!
 
-
 [When you've made your copy you need to set up the script - jump to the script set up guide](#script-setup-guide)
-=======
+
 or **copy scripts from GitHub** 
 
 To do this create a brand new Google Sheet and go to **Tools > Script editor from the menu**.
