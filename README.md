@@ -1,6 +1,32 @@
 # ga-realtime-alerting
 Uses Google Apps Script to query the Google Analytics Realtime API on a schedule - every 5, 10, 15 or 30 minutes - and sends an email alert when user-defined metric thresholds are reached.
 
+**Examples use cases** 
+
+1.  Error alerts
+
+Server errors are problems for any service, and you want to know about them straight away and if you don't have a separate service to monitor these errors Google Analytics is a good way to monitor them - so make sure they're tagged. Using the Real time API and this tool you could monitor 5XX errors and get an email alert if your service starts return them. 
+
+For this example you'd set your alerts as below. The first alert would send you an email if a service sees more than 5 500 errors in the past 30 min but the second alert would send an email if 5 of any internal server alert was seen by a user (500,501,502 etc) and show yuo which errors had been seen. Using this configuration this alert would be sent at any time day or night on any day. Once an alert email has been sent, the tool would wait 60 min before sending another alert.
+
+<img src="https://lh5.googleusercontent.com/rgqQ0davu4x78mdfqc0xo0RyR61bwat8UuNY9GDCd2nJ3zWvMbZLM_KbEvdvqZn5y6UPs4SUPUD3DD90nU_Kybjw-YthgpYZ2YHalb_vImQginAUwGSzyPxLmtRHaLUvMk1KjXu6" width="500">
+
+2.  More then/fewer than expected number of views?
+
+Do you expect a certain number of certain events during the working week? The first alert would alert you if more than your expected number of 'submissions' were seen the second if less..
+
+
+The first alert would check if you’d had more than 500 submissions and send and email to you (and the head of warehouse!) to warn you there was a tonne of submissions coming in, because you know you’ll go in investigate this immediately this alert won’t send another email for 2 hours. The second alert will send an email if there have been fewer than 100 submissions in the last 30 min.
+
+<img src="https://lh5.googleusercontent.com/apvzqgxVQ42x_p4x1KiTJdjUSK39vDFaWARJkEY9RriK__4rtwsS6VFs9_hpMOBD97dMXn4PQZfJnuIsZfhSrMC9gVNXlOhli7glN2V10gJOKWmKGKqmmYQrlzZSZKGa6ixJVzfY" width="500">
+
+The emails aren’t super pretty and will look like the example below but you could add html if you wanted to pretty them up (see the bolding using strong tags in the google sheet cell). If you add a dimension as shown in example 1. you’ll get a basic table of the break down.
+
+<img src="https://lh3.googleusercontent.com/k6Qcs4KP-dW_mGqxrBRFpX6loZVrI7B1b80gfohGBbfMejifVPWE2IVebVkWShIRufr6l-WYYtRRQifVT6w5xqr8yKDjtvcpDPMF-OulwpidhvwakxmXjyTt9pZMk0QvtXVwPt_q" width="366">
+
+You could be clever and make your thresholds dynamic based on the latest GA information or change based on the time of day using google sheets formula… enjoy
+
+
 # Setup guide 
 
 Make a copy of the **script template**
