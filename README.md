@@ -1,7 +1,7 @@
 # ga-realtime-alerting
 Uses Google Apps Script to query the Google Analytics Realtime API on a schedule - every 5, 10, 15 or 30 minutes - and sends an email alert when user-defined metric thresholds are reached.
 
-**Examples use cases** 
+**Example use cases** 
 
 1.  Error alerts
 
