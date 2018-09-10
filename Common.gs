@@ -1,7 +1,7 @@
 /**************************************************************************
 *  Realtime Alerting for Google Analytics
 *  Version: 1.0
-* Authors: Dan Gilbert - @dangilbert.now & Ed Guccione @triweasel
+*  Authors: Dan Gilbert - @dangilbert.now & Ed Guccione @triweasel
 **************************************************************************/
 
 /**
