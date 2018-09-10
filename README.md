@@ -126,3 +126,12 @@ To add another alert go to **GA Realtime > Add new alert** from the menu.
 To check your alerts will run successfully go to **GA Realtime > Check Alert Configurations**
 
 To schedule your alerts go to **GA Realtime > Schedule Alerting** and selected a checking frequency
+
+## Authors
+
+* **Ed Guccione** - *Initial work* - @triweasel
+* **Dan Gilbert** - *Initial work* - @dangilbert.now
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
