@@ -130,7 +130,7 @@ To schedule your alerts go to **GA Realtime > Schedule Alerting** and selected a
 ## Authors
 
 * **Ed Guccione** - *Initial work* - @triweasel
-* **Dan Gilbert** - *Initial work* - @dangilbert.now
+* **Dan Gilbert** - *Initial work* - @dangilbertnow
 
 ## License
 
