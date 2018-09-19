@@ -64,7 +64,9 @@ Save your script (and name it)
 
 # Script setup guide 
 
-Go to **Resources > Advanced Google services.**
+Go to **Tools > Script Editor**
+
+then **Resources > Advanced Google services.**
 
 ![ScreenShot](https://lh3.googleusercontent.com/8PsiEn4304XjE0xPnoQGTaXeR3gEOk5dzPRaA75OySjR1PpYFpNEQV3FOpHK2AvUZJLBJTKPdPaFyhj_HgBl1oHPbegkbe5-HRNOQm9s19uXQgfmbh9YDweBTTO18wa8C1cGJxmi)
 
@@ -102,9 +104,11 @@ The script is now setup and you can close the Script Editor tab.
 
 Refresh the browser - This generates the App menus 
 
+You can either edit the example Alert provided in the sheet or
+
 Go to **GA Realtime > Create Configuration Sheet** in the menu
 
-The first time you run the script you will be prompted to grant some permissions (text depends on what you named your script).
+The first time you run the script (by creating new alerts or config sheet or checking your alerts) you will be prompted to grant some permissions (text depends on what you named your script).
 
 <img src="https://lh3.googleusercontent.com/84NuhfAUvBNTUu_BX1bJgo9OsIBHnwhp30wPMxkTNVCkFM6BEu43FGVrE3KexQRPxS90lG3xxvYCEqjm3eELCMBg0XcwZg3J6e8Jz7hvP5bhZiD01AxlC53N_w80EmlorEjokLI3" width="332">
 
