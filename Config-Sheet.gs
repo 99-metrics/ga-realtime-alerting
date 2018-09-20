@@ -146,7 +146,6 @@ function addAlert(sheet) {
           .setWrap(true);
   
   setValidation(sheet, alertColumn);
-  sheet.autoResizeColumns(1, alertColumn);
 }
 
 function setValidation(sheet, column) {
