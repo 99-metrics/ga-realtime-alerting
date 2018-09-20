@@ -21,7 +21,6 @@ function onOpen() {
               .addItem('Every 30 minutes', 'menuItem7')
               .addItem('Stop Monitoring', 'menuItem8'))
   .addToUi();
-  sentHitToGA("/open");
 }
 
 /**
