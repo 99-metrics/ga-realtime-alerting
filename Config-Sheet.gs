@@ -130,6 +130,7 @@ function addHeadings(sheet) {
   .setNotes(CONFIG_NOTES)
   .setBackgrounds(CONFIG_COLOURS_DARK)
   .setFontColor("#f3f3f3");
+  sheet.setColumnWidth(1, 200);
 }
 
 function addAlert(sheet) {
