@@ -131,6 +131,10 @@ To check your alerts will run successfully go to **GA Realtime > Check Alert Con
 
 To schedule your alerts go to **GA Realtime > Schedule Alerting** and selected a checking frequency
 
+## Collecting anonymous usage data
+
+We use Google Analytics to understand how many users/sheets are using this script and how often.  To do this, a random anonymous client ID is generated for each sheet and this value is stored in script properties. No sensitive data about the user or spreadsheet is sent to Google Analytics.  To diable this anaonymous data collection please change the 'SEND_ANALYTICS_DATA' variable (line 15: Alerting.gs) to false. 
+
 ## Authors
 
 * **Ed Guccione** - *Initial work* - @triweasel
