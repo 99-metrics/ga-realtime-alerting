@@ -1,7 +1,7 @@
 /**************************************************************************
 *  Realtime Alerting for Google Analytics
 *  Version: 1.0
-*  Authors: Dan Gilbert - @dangilbertnow & Ed Guccione @triweasel
+*  Authors: Dan Gilbert @dangilbertnow & Ed Guccione @triweasel
 **************************************************************************/
 
 /**
@@ -11,7 +11,8 @@
 
 SS = SpreadsheetApp.getActiveSpreadsheet();
 CONFIG = SS.getSheetByName("Alert-Configuration");
-USER_EMAIL = Session.getActiveUser().getEmail()
+USER_EMAIL = Session.getActiveUser().getEmail();
+SEND_ANALYTICS_DATA = true;
 
 /**
 * Main function scheduled as a project trigger to check realtime alerts. 

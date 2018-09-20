@@ -1,7 +1,7 @@
 /**************************************************************************
 *  Realtime Alerting for Google Analytics
 *  Version: 1.0
-*  Authors: Dan Gilbert - @dangilbertnow & Ed Guccione @triweasel
+*  Authors: Dan Gilbert @dangilbertnow & Ed Guccione @triweasel
 **************************************************************************/
 
 /**
@@ -83,4 +83,58 @@ function trimSheet(sheetname) {
     trim.deleteRows(lastRow + 1, maxRows - lastRow);
   }
   trim.activate();
+}
+
+/**
+* Check for existing GA Client ID or generate/set one
+* @return {string} cid
+*/
+function getGaClientId() {
+  var cid = readScriptProperty("ga_clientId");
+  if(!cid) {
+    cid = generateUUID_();
+    setScriptProperty("ga_clientId", cid);
+  }
+  return(cid);  
+}
+
+/**
+* Sends hits to Google Analytics Measurement Protocol
+* @param {string} pagePath
+*/
+function sentHitToGA(pagePath) {
+  
+  if(SEND_ANALYTICS_DATA === false) { return; };
+  
+  var url = "https://www.google-analytics.com/collect";
+  var v = "1";
+  var t = "pageview";
+  var tid = "UA-126120932-1";
+  var cid = getGaClientId();
+  var ds = "web";
+  var dr = "ga-realtime-alerting";
+  var dl = encodeURIComponent(pagePath);
+  var cd1 = "not-bot-script-user";
+  var cd2 = cid;
+  
+  var payload = "v=" + v + "&t=" + t + "&tid=" + tid + "&cid=" + cid + "&ds=" + ds + "&dr=" + dr + "&dl=" + dl + "&cd1=" + cd1 + "&cd2=" + cd2;
+  
+  var options = {
+    'method' : 'post',
+    'payload' : payload
+  };
+  
+  UrlFetchApp.fetch(url, options);  
+}
+
+/**
+* Generate a random UUID for Google Analytics
+* @return {string} UUID
+*/
+// http://stackoverflow.com/a/2117523/1027723
+function generateUUID_(){
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+  });
 }
