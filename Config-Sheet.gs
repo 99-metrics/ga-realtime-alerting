@@ -1,6 +1,6 @@
 /**************************************************************************
 *  Realtime Alerting for Google Analytics
-*  Version: 1.0
+*  Version: 1.1
 *  Authors: Dan Gilbert @dangilbertnow & Ed Guccione @triweasel
 **************************************************************************/
 
