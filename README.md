@@ -135,7 +135,7 @@ To schedule your alerts go to **GA Realtime > Schedule Alerting** and selected a
 
 We use Google Analytics to understand how many users/sheets are using this script and how often.  To do this, a random anonymous client ID is generated for each sheet and stored in script properties. No sensitive data about the user or spreadsheet will be sent to Google Analytics.  
 
-To diable this anonymous data collection you can change the 'SEND_ANALYTICS_DATA' variable (line 15: Alerting.gs) to false. 
+To diable sending analytics data you can change the 'SEND_ANALYTICS_DATA' variable (line 15: Alerting.gs) to false. 
 
 ## Authors
 
