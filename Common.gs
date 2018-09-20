@@ -104,7 +104,7 @@ function getGaClientId() {
 */
 function sentHitToGA(pagePath) {
   
-  if(SEND_ANALYTICS === false) { return; };
+  if(SEND_ANALYTICS_DATA === false) { return; };
   
   var url = "https://www.google-analytics.com/collect";
   var v = "1";
